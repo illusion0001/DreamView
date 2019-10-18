@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{957A6F98-77B6-4CB2-8DC2-8B39E6975B1C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DreamView</RootNamespace>
+    <AssemblyName>DreamView</AssemblyName>
+    <StartupObject>DreamView.App</StartupObject>
+    <ManifestCertificateThumbprint>16DD09A8C3654F11A259400172B30DBB9CA5F04F</ManifestCertificateThumbprint>
+    <ManifestKeyFile>dreamview_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>zou_icon.ico</ApplicationIcon>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationVersion>1.3.0.%2a</ApplicationVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Compile Include="Dialogs\Controls.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dialogs\MeshSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\MeshSelect.Designer.cs">
+      <DependentUpon>MeshSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="exporter\eTools.cs" />
+    <Compile Include="exporter\Exporter.cs" />
+    <Compile Include="exporter\Ms3dExporter.cs" />
+    <Compile Include="exporter\SMDExporter.cs" />
+    <Compile Include="extractor\injector.cs" />
+    <Compile Include="geometry\Visualize.cs" />
+    <Compile Include="importer\iMesh.cs" />
+    <Compile Include="importer\rebundle.cs" />
+    <Compile Include="importer\VertexStream.cs" />
+    <Compile Include="parser\SharkFile.cs" />
+    <Compile Include="tools\MatrixTools.cs" />
+    <Compile Include="tools\ReaderWriter.cs" />
+    <Compile Include="tools\Tagger.cs" />
+    <Compile Include="exporter\XFileExporter.cs" />
+    <Compile Include="geometry\Bones.cs" />
+    <Compile Include="importer\Importer.cs" />
+    <Compile Include="importer\SMDImporter.cs" />
+    <Compile Include="Main\Application.cs" />
+    <Compile Include="Main\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="geometry\Mesh.cs" />
+    <Compile Include="parser\bundleHeader.cs" />
+    <Compile Include="parser\parseBone.cs" />
+    <Compile Include="exporter\xtools.cs" />
+    <Compile Include="parser\parseBundle.cs" />
+    <Compile Include="tools\Tools.cs" />
+    <Compile Include="geometry\Scene.cs" />
+    <Compile Include="shading\Blitz.cs" />
+    <Compile Include="tools\direct3d.cs" />
+    <Compile Include="parser\bundleMesh.cs" />
+    <Compile Include="geometry\culling.cs" />
+    <Compile Include="extractor\extract.cs" />
+    <Compile Include="extractor\nametable.cs" />
+    <Compile Include="geometry\Frame.cs" />
+    <Compile Include="Dialogs\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="parser\parseFrame.cs" />
+    <Compile Include="parser\parseShader.cs" />
+    <Compile Include="parser\parseScene.cs" />
+    <Compile Include="shading\shader.cs" />
+    <Compile Include="shading\Stages.cs" />
+    <Compile Include="shading\texture.cs" />
+    <Compile Include="tools\FileTools.cs" />
+    <Compile Include="shading\vertexDecl.cs" />
+    <Compile Include="Dialogs\Waiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Waiting.designer.cs">
+      <DependentUpon>Waiting.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3DX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogs\MeshSelect.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MeshSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Settings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Waiting.resx">
+      <DependentUpon>Waiting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pics\anim.gif" />
+    <None Include="pics\green.gif" />
+    <None Include="pics\red.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pics\tri.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pics\empty.gif" />
+    <BaseApplicationManifest Include="Properties\app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="zou_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.DirectX">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.DirectX.Direct3D">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.DirectX.Direct3DX">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <PropertyGroup>
+    <PreBuildEvent>del $(TargetDir)\dreamview.exe</PreBuildEvent>
+  </PropertyGroup>
+</Project>
